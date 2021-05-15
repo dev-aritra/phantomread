@@ -8,6 +8,6 @@ spring:
       ddl-auto: create-only
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: "jdbc:postgresql://localhost:5432/flipkart"
+    url: "jdbc:postgresql://localhost:5432/amazon"
     username: root
     password: root

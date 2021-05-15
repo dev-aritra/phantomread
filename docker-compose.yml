@@ -3,7 +3,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: flipkart
+      POSTGRES_DB: amazon
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
     ports:

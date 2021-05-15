@@ -41,8 +41,8 @@ class OrderServiceTest {
         Product iPhone12 = new Product("iPhone12", 1);
         productRepository.saveAndFlush(iPhone12);
 
-        ExecutorService threadPool = Executors.newFixedThreadPool(100);
-        List<Callable<Optional<Order>>> orderRequests = getOrderRequests(iPhone12.getId(), 100);
+        ExecutorService threadPool = Executors.newFixedThreadPool(10);
+        List<Callable<Optional<Order>>> orderRequests = getOrderRequests(iPhone12.getId(), 20);
         List<Future<Optional<Order>>> results = threadPool.invokeAll(orderRequests);
         Thread.sleep(3000);
         long successCount = results.stream()
@@ -70,7 +70,7 @@ class OrderServiceTest {
 
     @AfterEach
     void tearDown() {
-//        deleteAllData();
+        deleteAllData();
     }
 
     private void deleteAllData() {

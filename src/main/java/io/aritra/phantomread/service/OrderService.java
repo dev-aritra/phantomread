@@ -5,10 +5,9 @@ import io.aritra.phantomread.entity.Product;
 import io.aritra.phantomread.repository.OrderRepository;
 import io.aritra.phantomread.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -22,9 +21,9 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    @Transactional
+    @Transactional()
     public Optional<Order> placeOrder(Long productId, Long userId) {
-        Optional<Product> product = productRepository.findById(productId);
+        Optional<Product> product = productRepository.findByIdWithWriteLock(productId);
         product.orElseThrow(() -> new RuntimeException("Invalid product id"));
 
         if (product.get().getAvailableUnits() > 0) {
