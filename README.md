@@ -3,7 +3,7 @@ A project that demonstrates solution to Phantom Reads problem
 
 ## Want to know more?
 Read the compleget guide here</br>
-<medium placeholder>
+https://levelup.gitconnected.com/phantom-reads-race-condition-on-database-45a2990efc97
   
 ## Running this project
 1. Install java11
