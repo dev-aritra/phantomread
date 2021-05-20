@@ -2,7 +2,7 @@
 A project that demonstrates solution to Phantom Reads problem
 
 ## Want to know more?
-Read the compleget guide here</br>
+Read the complete guide here</br>
 https://levelup.gitconnected.com/phantom-reads-race-condition-on-database-45a2990efc97
   
 ## Running this project
